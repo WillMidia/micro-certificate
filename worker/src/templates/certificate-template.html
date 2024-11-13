@@ -1,36 +1,150 @@
 <!DOCTYPE html>
-<html>
-    <!-- Define o tipo de documento como HTML5 -->
+<html lang="pt-BR">
 
 <head>
-    <title>Certificado</title>
-    <!-- Define o título da página que aparecerá na aba do navegador -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado de Conclusão</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
 
+        .certificate-container {
+            width: 800px;
+            padding: 40px;
+            text-align: center;
+            border: 2px solid #000000;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .student-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .certificate-text {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+
+        .date {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 40px;
+            color: #3b008f;
+        }
+
+        .date-label {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Decorative elements */
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #3b008f;
+            position: absolute;
+        }
+
+        .circle.top-left {
+            top: 20px;
+            left: 20px;
+        }
+
+        .circle.bottom-right {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .dashed-line {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 2px dashed #3b008f;
+            top: 60px;
+            left: 150px;
+            transform: rotate(45deg);
+        }
+
+        .striped-circle {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-image: linear-gradient(135deg, #000000 25%, transparent 25%);
+            background-size: 10px 10px;
+            bottom: 80px;
+            left: 60px;
+        }
+
+        .plus-symbol {
+            position: absolute;
+            bottom: 20px;
+            right: 50px;
+            font-size: 24px;
+            color: #3b008f;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Início do corpo da página onde o conteúdo principal será exibido -->
 
-    <h1>Certificado de Conclusão</h1>
-    <!-- Cabeçalho principal com o título "Certificado de Conclusão" -->
+<div class="certificate-container">
+    <div class="certificate-main">
+        <h1>Certificado <br>de Conclusão</h1>
 
-    <p>Aluno: {{nome_aluno}}</p>
-    <!-- Parágrafo que exibe o nome do aluno, utilizando a variável {{nome_aluno}} para ser substituída dinamicamente -->
+        <div class="subtitle">Curso:</div>
+        <p class="course-name">{{nome_curso}}</p>
 
-    <p>Nacionalidade: {{nacionalidade}}</p>
-    <!-- Parágrafo que exibe a nacionalidade do aluno, usando a variável {{nacionalidade}} -->
+        <p class="student-name">{{nome_aluno}}</p>
+        <p class="certificate-text">Concluiu o curso com carga horária estimada em {{carga_horaria}} horas.</p>
 
-    <p>Curso: {{nome_curso}}</p>
-    <!-- Parágrafo que exibe o nome do curso concluído pelo aluno, usando a variável {{nome_curso}} -->
+        <span class="date-label">Data de Conclusão:</span>
+        <p class="date" id="dataConclusao"></p>
 
-    <p>Data de Conclusão: {{data_conclusao}}</p>
-    <!-- Parágrafo que exibe a data de conclusão do curso, usando a variável {{data_conclusao}} -->
-    
-    <!-- Adicione outros campos conforme necessário -->
-    <!-- Comentário sugerindo que campos adicionais podem ser adicionados aqui -->
+        <!-- Decorative elements -->
+        <div class="circle top-left"></div>
+        <div class="circle bottom-right"></div>
+        <div class="dashed-line"></div>
+        <div class="striped-circle"></div>
+        <div class="plus-symbol">+</div>
+    </div>
+</div>
 
+<script>
+    // Gerar a data atual no formato DD/MM/YYYY
+    const hoje = new Date();
+    const dia = hoje.getDate().toString().padStart(2, '0');
+    const mes = (hoje.getMonth() + 1).toString().padStart(2, '0');
+    const ano = hoje.getFullYear();
+    const dataFormatada = `${dia}/${mes}/${ano}`;
+
+    document.getElementById("dataConclusao").textContent = dataFormatada;
+</script>
 </body>
-<!-- Fim do corpo da página -->
 
 </html>
-<!-- Fim do documento HTML -->
