@@ -98,6 +98,22 @@ Pode-se utilizar Key:`Content-Type` e Value: `application/json`
     "carga_horaria": 180
 }
 ```
+#### Exemplo cURL de chamada:
+```curl
+curl -X POST http://localhost:3000/api/v1/certificate \
+-H "Content-Type: application/json" \
+-d '{
+    "nome_aluno": "William Tedros",
+    "nacionalidade": "Brasileiro",
+    "estado": "SP",
+    "data_nascimento": "2003-01-01",
+    "data_conclusao": "2024-11-13",
+    "rg": "987654321",
+    "nome_curso": "Kotlin & Springboot",
+    "carga_horaria": 180
+}'
+```
+
 ---
 
 ## Detalhes dos Serviços 📡
