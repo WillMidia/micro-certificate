@@ -81,6 +81,7 @@ No caso deste projeto, usa-se:
 
 ### Endpoint Principal
 - **POST /api/v1/certificate**: Envia os dados do aluno e do curso para emissão de certificado.
+- http://localhost:3000/api/v1/certificate
 
 ### Headers no Postman
 Pode-se utilizar Key:`Content-Type` e Value: `application/json`
