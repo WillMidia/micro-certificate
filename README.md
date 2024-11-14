@@ -79,6 +79,12 @@ No caso deste projeto, usa-se:
 
 ## Como Utilizar a API 🧑‍💻
 
+1. **Instale as dependências**:
+    - Acesse as pastas `/api` e `/worker`:
+   ```bash
+   npm install
+   ```
+
 ### Endpoint Principal
 - **POST /api/v1/certificate**: Envia os dados do aluno e do curso para emissão de certificado.
 - http://localhost:3000/api/v1/certificate
